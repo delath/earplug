@@ -6,6 +6,9 @@ This is a game library website that takes as input a json containing games title
 
 ## Preview
 
+<p align="center"><img src="https://github.com/delath/earplug/blob/assets/preview1.png?raw=true" alt="Preview 1" width="100%" /></p>
+<p align="center"><img src="https://github.com/delath/earplug/blob/assets/preview2.png?raw=true" alt="Preview 2" width="100%" /></p>
+
 ## Installation
 
 ```bash
