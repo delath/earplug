@@ -42,7 +42,7 @@ Start the website in dev mode
 npm run dev
 ```
 
-The first time only, it might some time to fetch all the data and write it on the `games.metadata.json`, a file you can manually edit should you want to manage the games on your main page.
+The first time only, it might take some time to fetch all the data and write it on the `games.metadata.json`, a file you can manually edit should you want to manage the games on your main page.
 
 ## Acknowledgments
 
