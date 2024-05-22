@@ -26,12 +26,12 @@ const cacheData = [
     "name": "Alan Wake II"
   },
   {
-    "id": 127111,
+    "id": 2993,
     "cover": {
-      "id": 87320,
-      "image_id": "co1vdk"
+      "id": 2993,
+      "image_id": "co1rcy"
     },
-    "name": "The Wolf Among Us: Episode 5 - Cry Wolf"
+    "name": "The Wolf Among Us"
   },
   {
     "id": 191435,
