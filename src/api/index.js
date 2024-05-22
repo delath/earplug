@@ -107,7 +107,7 @@ const api = {
         cover.image_id != null
         ${str};
       ${name ? `search "${name}";` : ''}
-      limit 1;`,
+      limit 10;`,
     });
   },
 

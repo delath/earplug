@@ -71,7 +71,7 @@ export default async function Home({ params }) {
                   name={name}
                   altText='Screenshot'
                   imageId={screenshot.image_id}
-                  size='s-md'
+                  size={index === 0 ? 's-big' : 's-md'}
                   classes='rounded-lg md:rounded-xl'
                 />
               </div>
