@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import Rating from './_components/rating';
-import Background from '@/app/_components/background';
 import CustomImage from '@/app/_components/custom-image';
 import Details from './_components/details';
 import api from '@/api';
@@ -26,13 +25,14 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <div className='px-4 xl:px-40 xl:mb-20 mt-4 xl:mt-24'>
+      <div className='px-4 xl:px-20 xl:mb-10 mt-4 xl:mt-16'>
         <div className='md:grid grid-cols-[0.4fr_1fr] lg:grid-cols-[0.25fr_1fr] gap-6'>
           <div className='w-2/5 mx-auto md:m-0 md:w-full relative aspect-[3/4] rounded-xl c-bg-dark-gray'>
             <CustomImage
               name={name}
               altText='Cover'
               imageId={cover?.image_id}
+              size='full-hd'
             />
           </div>
 
@@ -58,7 +58,7 @@ export default async function Home({ params }) {
         </div>
 
         {!!screenshots?.length && (
-          <div className='mt-6 grid gap-1.5 md:gap-2.5 grid-cols-[repeat(2, 1fr)] aspect-[2/1] lg:aspect-auto lg:min-h-[380px]'>
+          <div className='mt-6 grid gap-1.5 md:gap-4 grid-cols-[repeat(2, 1fr)] aspect-[2/1] lg:aspect-auto lg:min-h-[423px]'>
             {screenshots.slice(0, 5).map((screenshot, index) => (
               <div
                 className={
@@ -81,19 +81,22 @@ export default async function Home({ params }) {
 
         <Details {...details} />
 
-        <h2 className='mt-10 text-2xl font-bold mb-2'>You Might Also Like</h2>
-
-        <div className='mt-3 md:mt-5 grid grid-cols-3 sm:grid-cols-5 grid-rows-3 sm:grid-rows-2 auto-rows-[0]	overflow-hidden gap-2'>
-          {similar_games?.map((game) => (
-            <Link
-              className='relative aspect-[3/4] rounded-xl c-bg-dark-gray transition md:hover:brightness-110'
-              key={game.id}
-              href={`/games/${game.id}`}
-            >
-              <CustomImage {...game} altText='Cover' />
-            </Link>
-          ))}
-        </div>
+        {!!similar_games?.length && (
+          <>
+            <h2 className='mt-10 text-2xl font-bold mb-2'>You Might Also Like</h2>
+            <div className='mt-3 md:mt-5 grid grid-cols-3 sm:grid-cols-10 grid-rows-3 sm:grid-rows-1 auto-rows-[0]     overflow-hidden gap-2'>
+              {similar_games.map((game) => (
+                <Link
+                  className='relative aspect-[3/4] rounded-xl c-bg-dark-gray transition md:hover:brightness-110'
+                  key={game.id}
+                  href={`/games/${game.id}`}
+                >
+                  <CustomImage {...game} altText='Cover' size='c-big' />
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </>
   );
