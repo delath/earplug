@@ -24,6 +24,6 @@ export const IMAGE_SIZES = {
   logo: 't_logo_med',
   thumb: 't_thumb',
   micro: 't_micro',
-  hd: 't_720p',
+  'hd': 't_720p',
   'full-hd': 't_1080p',
 };
