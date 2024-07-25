@@ -58,13 +58,12 @@ export default async function Home({ params }) {
         </div>
 
         {!!screenshots?.length && (
-          <div className='mt-6 grid gap-1.5 md:gap-4 grid-cols-[repeat(2, 1fr)] aspect-[2/1] lg:aspect-auto lg:min-h-[423px]'>
+          <div className='mt-6 grid gap-1.5 md:gap-4 grid-cols-[repeat(2, 1fr)] lg:grid-cols-[repeat(2, 1fr)] lg:min-h-[423px]'>
             {screenshots.slice(0, 5).map((screenshot, index) => (
               <div
-                className={
-                  `screenshot-${index + 1} ` +
-                  'c-bg-dark-gray relative rounded-lg md:rounded-xl'
-                }
+                className={`screenshot-${index + 1} c-bg-dark-gray relative rounded-lg md:rounded-xl ${
+                  index === 0 ? 'aspect-w-16 aspect-h-9' : 'aspect-w-16 aspect-h-9'
+                }`}
                 key={screenshot.image_id}
               >
                 <CustomImage

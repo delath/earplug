@@ -110,3 +110,11 @@ main:has(.next-error-h1) div:last-of-type {
   border: 1px solid #8d8d8d;
   background-color: #000000;
 }
+
+.aspect-w-16 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-h-9 {
+  aspect-ratio: 16 / 9;
+}
